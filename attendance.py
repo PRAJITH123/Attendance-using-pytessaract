@@ -15,6 +15,7 @@ names = pd.read_excel("/home/prajith_v/Downloads/Attendance _harsh.xlsx")
 Students = names["Name "].tolist()
 print("reading data over...")
 
+# finding the names present in the classroom
 present=[]
 while(cap.isOpened()):
     ret, frame = cap.read()
@@ -32,8 +33,11 @@ while(cap.isOpened()):
 
     except:
         break
+
+
 print("finding absentees......")
 
+# comparing the names present in the video with the list of all students in the class and finding the missing ones
 absent=[]
 for i in Students:
     if i not in present:
